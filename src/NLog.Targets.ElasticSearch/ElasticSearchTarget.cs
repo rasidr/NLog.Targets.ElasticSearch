@@ -328,6 +328,7 @@ namespace NLog.Targets.ElasticSearch
             if (EnableHttpCompression)
                 config = config.EnableHttpCompression();
 
+            config.EnableApiVersioningHeader();
             _client = new ElasticLowLevelClient(config);
 
             if (!string.IsNullOrEmpty(ExcludedProperties))
